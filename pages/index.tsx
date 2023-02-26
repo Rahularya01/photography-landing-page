@@ -2,8 +2,12 @@ import Head from "next/head";
 import WomanImg from "../img/home/woman.png";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { transition1 } from "@/transitions";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -15,19 +19,27 @@ export default function Home() {
       <section className="section">
         <div className="container mx-auto relative h-full">
           <div className="flex flex-col justify-center">
-            <div className="w-full pt-36 pb-14 lg:pt-0 lg:pb-0 lg:w-auto z-10 lg:absolute flex flex-col justify-center items-center lg:items-start">
-              <h1 className="h1">
+            <motion.div
+              initial={{ y: "-200%", opacity: 0 }}
+              animate={{ y: "0%", opacity: 1 }}
+              exit={{ y: "-200%" }}
+              transition={{ delay: 0.1, type: "spring", duration: 0.5 }}
+              className="w-full pt-36 pb-14 lg:pt-0 lg:pb-0 lg:w-auto z-10 lg:absolute flex flex-col justify-center items-center lg:items-start"
+            >
+              <h1 className="h1 lg:-mt-40">
                 Photographer <br /> & film maker
               </h1>
               <p className="text-[26px] lg:text-[36px] font-primary mb-4 lg:mb-12">
                 Los Angeles, USA
               </p>
-              <Link href={'/contact'} className='btn mb-[30px]'>hire me</Link>
-            </div>
+              <Link href={"/contact"} className="btn mb-[30px]">
+                hire me
+              </Link>
+            </motion.div>
             <div className="flex justify-end max-h-96 lg:max-h-max">
-              <div className="relative lg:-right-40 overflow-hidden">
-                <Image src={WomanImg} alt="Image"/>
-              </div>
+              <motion.div className="relative lg:-right-40 overflow-hidden">
+                <Image src={WomanImg} alt="Image" />
+              </motion.div>
             </div>
           </div>
         </div>

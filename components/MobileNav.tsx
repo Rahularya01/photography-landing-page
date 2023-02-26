@@ -33,21 +33,32 @@ const MobileNav = () => {
         animate={openMenu ? "show" : ""}
         className="bg-white shadow-2xl w-full absolute top-0 right-0 max-w-xs h-screen z-20"
       >
-        <div onClick={() => setOpenMenu(false)} className="text-4xl absolute z-30 left-4 top-14 text-primary cursor-pointer">
+        <div
+          onClick={() => setOpenMenu(false)}
+          className="text-4xl absolute z-30 left-4 top-14 text-primary cursor-pointer"
+        >
           <IoMdClose />
         </div>
         <ul className="h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl">
           <li>
-            <Link href={"/"}>Home</Link>
+            <Link onClick={() => setOpenMenu(false)} href={"/"}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link href={"/about"}>About</Link>
+            <Link onClick={() => setOpenMenu(false)} href={"/about"}>
+              About
+            </Link>
           </li>
           <li>
-            <Link href={"/portfolio"}>Portfolio</Link>
+            <Link onClick={() => setOpenMenu(false)} href={"/portfolio"}>
+              Portfolio
+            </Link>
           </li>
           <li>
-            <Link href={"/contact"}>Contact</Link>
+            <Link onClick={() => setOpenMenu(false)} href={"/contact"}>
+              Contact
+            </Link>
           </li>
         </ul>
       </motion.div>
