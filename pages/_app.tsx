@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { AppProps } from "next/app";
 import { Mulish } from "next/font/google";
 import { useRouter } from "next/router";
+import { Toaster } from "react-hot-toast";
 
 const mulish = Mulish({
   subsets: ["latin"],
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={mulish.className}>
       <Header />
+      <Toaster />
       <AnimatePresence mode="wait">
         <motion.div
           key={router.asPath}

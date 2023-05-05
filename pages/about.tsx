@@ -9,9 +9,8 @@ const About = () => {
     <>
     <Head>
       <title>About | Alina Lee </title>
-
     </Head>
-      <section className="section">
+      <section className="section"> 
         <div className="container mx-auto h-full relative">
           <div className="flex flex-col lg:flex-row h-full items-center justify-center gap-x-24 text-center lg:text-left lg:pt-16">
             <div className="flex-1 max-h-96 lg lg:max-h-[33rem] m order-2 lg:order-none overflow-hidden">
